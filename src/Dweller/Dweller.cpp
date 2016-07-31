@@ -57,7 +57,7 @@ Dweller& Dweller::operator =(const Dweller& dw) {
 	this->stat = new DwStatistics(*dw.stat);
 }
 
-void Dweller::sayHi(void) {
+void Dweller::sayHi(void) const {
 	std::cout << *(this->name) << " " <<  *(this->surname) << endl;
 }
 
@@ -67,6 +67,18 @@ bool Dweller::gainLvl(void) {
 		return true;
 	}
 	else{return false;}
+}
+
+bool Dweller::gainDmg(int dmg) {
+	int realDmg = processDmg(dmg);
+	if((realDmg <= 0) && (realDmg <= hp))
+	{
+		hp -= realDmg;
+	}
+}
+
+int Dweller::processDmg(int dmgInput) {
+
 }
 
 void Dweller::initStats(void) {
@@ -97,6 +109,10 @@ Dweller::Dweller(const Dweller& dwRef) {
 	this->name = new string(*dwRef.name);
 	this->surname = new string(*dwRef.surname);
 	this->stat = new DwStatistics(*dwRef.stat);
+	this->exp = dwRef.exp;
+	this->hp = dwRef.hp;
+	this->dw_type = dwRef.dw_type;
+	this->lvl = dwRef.lvl;
 }
 
 void Dweller::rename(const std::string& nm, const std::string& snm) {

@@ -20,3 +20,7 @@ DwStatistics::DwStatistics(const DwStatistics& refObj) {
 		stats.statTab[i] = refObj.stats.statTab[i];
 	}
 }
+
+uint8_t DwStatistics::getStat(DwStatistics::stat_iter stat_iter) {
+	return this->stats.statTab[stat_iter];
+}

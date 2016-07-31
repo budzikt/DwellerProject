@@ -22,18 +22,23 @@
 		/* Constructors */
 		Dweller();
 		Dweller(const Dweller &dwRef);
+
 		/* Destructors */
 		virtual ~Dweller();
 
+		/* Overload operators */
 		Dweller& operator=(const Dweller & dw);
 
+		/* modificatiion function */
 		bool gainExp(int exp);
 		bool gainDmg(int dmg);
+		void rename(const std::string &nm, const std::string &snm);
 
+		/* Getters */
 		uint16_t gelLvl(void);
 
-		void sayHi(void);
-		void rename(const std::string &nm, const std::string &snm);
+		void sayHi(void) const;
+
 
 	private:
 		enum DWELLER_TYPE  {NORM, SPEC, LEGEND};

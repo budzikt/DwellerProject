@@ -13,6 +13,7 @@
 
 class DwEquipment {
 public:
+	enum eq_type {NORMAL, RARE, LEGENDARY};
 	DwEquipment();
 	virtual ~DwEquipment();
 private:
@@ -20,6 +21,7 @@ private:
 	std::string *gearPrefix;
 	DwStatistics *stats;
 	uint8_t condition;
+	DwEquipment::eq_type eqiup_type;
 };
 
 #endif /* DWELLER_DWEQUIPMENT_HPP_ */

@@ -11,7 +11,8 @@ DwEquipment::DwEquipment() {
 	gearName = new std::string("Default Gear");
 	gearPrefix = new std::string();
 	stats = new DwStatistics();
-
+	condition = 100;
+	eqiup_type = DwEquipment::NORMAL;
 }
 
 DwEquipment::~DwEquipment() {
