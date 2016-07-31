@@ -5,8 +5,8 @@
  *      Author: Tomek
  */
 
-#ifndef DWELLER_DWSTATISTICS_H_
-#define DWELLER_DWSTATISTICS_H_
+#ifndef DWELLER_DWSTATISTICS_HPP_
+#define DWELLER_DWSTATISTICS_HPP_
 
 #include <stdint.h>
 
@@ -18,7 +18,6 @@ class DwStatistics
 		DwStatistics(const DwStatistics& refObj);
 		struct SpecialStat_t{
 			uint8_t statTab[STAT_CNT];
-			uint8_t modifTab[STAT_CNT];
 		};
 		SpecialStat_t stats;
 	private:
@@ -27,4 +26,4 @@ class DwStatistics
 };
 
 
-#endif /* DWELLER_DWSTATISTICS_H_ */
+#endif /* DWELLER_DWSTATISTICS_HPP_ */

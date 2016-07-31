@@ -5,33 +5,35 @@
  *      Author: Tomek
  */
 
-#ifndef DWELLER_DWELLER_H_
-#define DWELLER_DWELLER_H_
+#ifndef DWELLER_DWELLER_HPP_
+#define DWELLER_DWELLER_HPP_
 
-#include <DwStatistics.h>
+#include <DwStatistics.hpp>
+#include <DwStatistics.hpp>
 #include <string>
 #include <stdbool.h>
 #include <iostream>
 #include <time.h>
 #include <stdlib.h>
 
-#include "DwStatistics.h"
 
 	class Dweller {
 	public:
-
+		/* Constructors */
 		Dweller();
-		Dweller(std::string const &n, std::string const &sn, int lvl = 1);
 		Dweller(const Dweller &dwRef);
-
+		/* Destructors */
 		virtual ~Dweller();
+
+		Dweller& operator=(const Dweller & dw);
 
 		bool gainExp(int exp);
 		bool gainDmg(int dmg);
+
 		uint16_t gelLvl(void);
-		Dweller& operator=(const Dweller & dw);
+
 		void sayHi(void);
-		void initStats(void);
+		void rename(const std::string &nm, const std::string &snm);
 
 	private:
 		enum DWELLER_TYPE  {NORM, SPEC, LEGEND};
@@ -44,12 +46,10 @@
 		DWELLER_TYPE dw_type;
 		DwStatistics *stat;
 
-
 		bool gainLvl(void);
 		int processDmg(int dmgInput);
-
-
+		void initStats(void);
 
 	};
 
-#endif /* DWELLER_DWELLER_H_ */
+#endif /* DWELLER_DWELLER_HPP_ */

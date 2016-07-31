@@ -5,13 +5,12 @@
  *      Author: Tomek
  */
 
-#include "DwStatistics.h"
+#include <DwStatistics.hpp>
 
 DwStatistics::DwStatistics() {
 	for(int i=0; i< STAT_CNT; i++)
 	{
 		stats.statTab[i] = 0;
-		stats.modifTab[i] = 0;
 	}
 }
 
@@ -19,6 +18,5 @@ DwStatistics::DwStatistics(const DwStatistics& refObj) {
 	for(int i=0; i< STAT_CNT; i++)
 	{
 		stats.statTab[i] = refObj.stats.statTab[i];
-		stats.modifTab[i] = refObj.stats.modifTab[i];
 	}
 }

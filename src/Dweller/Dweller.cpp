@@ -5,7 +5,7 @@
  *      Author: Tomek
  */
 
-#include "Dweller.h"
+#include <Dweller.hpp>
 
 using namespace std;
 
@@ -24,12 +24,7 @@ Dweller::Dweller() {
 	surname = new string("Default SurName");
 	dw_type = NORM;
 	stat = new DwStatistics();
-
-}
-
-Dweller::Dweller(const string& n, const string& sn, int lvl) {
-	this->name = new string("Default Name");
-	this->surname = new string("Default SurName");
+	initStats();
 }
 
 Dweller::~Dweller() {
@@ -102,4 +97,11 @@ Dweller::Dweller(const Dweller& dwRef) {
 	this->name = new string(*dwRef.name);
 	this->surname = new string(*dwRef.surname);
 	this->stat = new DwStatistics(*dwRef.stat);
+}
+
+void Dweller::rename(const std::string& nm, const std::string& snm) {
+	delete name;
+	delete surname;
+	name = new string(nm);
+	surname = new string(snm);
 }
